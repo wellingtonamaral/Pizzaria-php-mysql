@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include_once './src/functions/metas/metas.php';
+include_once './src/functions/connects/conexao.php';
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="<?php echo exibeMetas(1); ?>"/>
+        <meta name="keywords" content="<?php echo exibeMetas(2); ?>"/>
         <link rel="stylesheet" href="src/css/style.css" type="text/css" />
         
         <title></title>
