@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27/04/2020, 10:39:39
+    Author     : GAMER
+*/
+
+
+*{margin: 0; padding:0;}
+body{font-family: "Berlin","Berlin Sans FB Demi";text-align: center;/*HACK para IE*/}
+
+
+#container{width: 800px;margin: 0 auto;}
+#header{background-image: url("../assets/img/banner_header.jpg");background-repeat: no-repeat;height: 132px;}
+#logo{width: 320px;float:left;margin-top: 40px;margin-left: 15px;}
+
+/*BUSCAR*/
+#busca{width: 390px;float: right;margin-top: 105px;}
+#busca #txt_busca{border: solid 1px #FFF;font-size: 14px;color: #FFF;background-color: #CB0101;font-family: "Berlin","Berlin Sans FB Demi";}
+#busca #select_busca{border: solid 1.5px #FFF;font-size: 14px;color: #FFF;background-color: #CB0101;font-family: "Berlin","Berlin Sans FB Demi";}
+#busca #button_ok{background-color: red; color: #FFF; border: solid 1px #FFF;}
+/*FIM DA BUSCA*/
+
+/*MENU*/
+#menu{background-color: #900;color: #FFF;text-align: center;}
+#menu ul{padding: 5px;}
+#menu ul li{display:inline;list-style: nome;padding: 2px 7px;margin: 5px;}
+#menu ul li a{text-decoration: none; color: #FFF; margin: 5px; font-weight: bold;}
+#menu ul li a:hover{background-color: #FFF;color: #900;margin: 0; padding: 5px;}
+/*FIM MENU*/      
+
+/*MSG LOGADO*/
+#mensagem_logado{width:400px;float: right;text-align: right;padding-right: 5px;}
+/*FIM MSG LOGADO*/
+
+/*COUNTEUDO DO SITE*/
+#conteudo{clear: both;padding-top: 10px;}
+#destaques_semana{width: 340px;float: left;border: solid 1px red;text-align: left;}
+#pizzas_amostra{width: 455px;float: right;border: solid 1px red;text-align: left}
+#fix{clear: both;}
+/*FIM DO CONTEUDO*/
+
+
+
+
+
+
+
+/*FOOTER*/
+#footer{text-align: center;font-size: 12px;background-color: #900; 
+        color: #FFF;padding: 3px;margin-top: 10px;clear: both;padding: 7px;
+        font-size: 14px;}
+/*FIM FOOTER*/
