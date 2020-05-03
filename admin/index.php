@@ -1,8 +1,13 @@
 <?php
 
 session_start();
-include_once './functions/connects/conexao.php';
-include_once './functions/login/login.php';
+include_once './functions/config/config.php';
+try{
+    carregarIncludes(array("conexao","login"),"login");
+} catch (Exception $e) {
+    echo $e->getMessage();
+
+}
 
 
 

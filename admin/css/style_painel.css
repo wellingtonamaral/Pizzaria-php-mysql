@@ -1,0 +1,99 @@
+@font-face{
+    font-family: "Berlin";
+    src:url("../fonts/BRLNSR.TTF");
+}
+
+*{margin: 0;padding: 0}
+body{font-family: "Trebuchet MS";text-align: center;}
+#container{width: 800px;margin: 0 auto;}
+
+
+/* HEADER  */
+#header{width: 800px;}
+#header #logo{width: 400px;float: left;font-size: 30px; color: #990000;text-align: left;}
+#header #logo span#sublogo{font-size: 16px;}
+#header #busca{width: 200px; float: right;margin-top: 10px;text-align: left;}
+#header #busca #txt_busca{background-color: #900 ;border: solid 1px #900;padding: 2px;
+                          color: #FFF;height: 22px;width: 175px;font-weight: bold;}
+
+#header #busca #bt_busca{background-color: #900;border: solid 1.7px #900;
+                         padding: 2.2px;color: #FFF;float: right;height: 22px;  }
+
+/* Fim do HEADER  */
+
+/*CONTEDO DO ADMINISTRADOR*/
+#conteudo{width: 900px;clear: both;}
+#menu_lateral{width: 150px;text-align: left;padding-top: 20px;float: left;}
+#menu_lateral ul{font-size: 12px;list-style: none;}
+#menu_lateral ul li{padding: 3px 0;border-bottom:solid 1px #900;color: #900;}
+#menu_lateral ul li a{padding: 3px 0;border-bottom:solid 1px #900;color: #900;text-decoration: none;}
+
+#conteudo_do_admin{width: 700px;
+                  
+                   float: right;
+                   padding-top: 20px;
+                   text-align: left;
+                   font-size: 12px;
+                   
+                    
+}
+
+
+#fix{clear: both;}
+span#ultimoLogin{color: #333;font-weight: bold;}
+#bemvindo{font-size: 16px;margin-top: 10px;color: red;}
+
+/*FIM DO CONTEUDO DO ADMIN*/
+
+
+
+
+/* ROPADE  */
+#rodape{text-align: center;font-size: 12px;color: #333;background-color: #900;margin-top: 20px;color: #FFF;padding: 3px}
+
+/* Fim do RODAPE  */ 
+.formularioCadastro{width: 90%; margin-left: 20px;}   
+.formCadastro{background-color: #ccc;border: solid 1px #999; padding: 10px;font-size: 14px;}
+.formCadastro .txt_field{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 300px;}
+.formularioCadastro h2{font-size: 16px;}
+.formCadastro .bt_submit{background-color: #900;color: #ffffff;padding: 2px;   }
+.mensagem{background-color: green;text-align: center;margin-top: 10px;padding: 3px;color: #FFF;}
+/*erro{background-color: #900;text-align: center;margin-top: 10px;padding: 3px;color: #FFF;}*/
+.erro{margin-top: 10px;
+     color: red;
+     text-align: center;}
+.formCadastro label{display: block;}
+
+.formCadastro .txt_field_maior{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 500px;}
+.formCadastro .txt_field_menor{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 110px;}
+.formCadastro .txt_field_menor2{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 190px;}
+.formCadastro select{width: 300px;border: solid 1px #900;height: 20px;}
+.formCadastro .caixa_grande{width: 520px;}
+
+
+
+
+/**/
+.formularioAlterar{width: 90%; margin-left: 20px;}   
+.formularioAlterar tr{text-align: center;font-size:  16px;color: red;}
+.formularioAlterar tr td{border: solid 1px #ccc;}
+
+/*
+.formCadastro{background-color: #ccc;border: solid 1px #999; padding: 10px;font-size: 14px;}
+.formCadastro .txt_field{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 300px;}
+.formularioCadastro h2{font-size: 16px;}
+.formCadastro .bt_submit{background-color: #900;color: #ffffff;padding: 2px;   }
+.mensagem{background-color: green;text-align: center;margin-top: 10px;padding: 3px;color: #FFF;}
+.erro{background-color: #900;text-align: center;margin-top: 10px;padding: 3px;color: #FFF;}
+.formCadastro label{display: block;}
+
+.formCadastro .txt_field_maior{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 500px;}
+.formCadastro .txt_field_menor{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 110px;}
+.formCadastro .txt_field_menor2{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 190px;}
+.formCadastro select{width: 300px;border: solid 1px #900;height: 20px;}
+.formCadastro .caixa_grande{width: 520px;}
+*/
+
+
+
+/**/
