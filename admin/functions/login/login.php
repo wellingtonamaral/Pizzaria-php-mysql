@@ -54,6 +54,7 @@ function logar($login, $senha) {
         if ($logar->rowCount() == 1):
             //Se logou cria a Sessão
             $_SESSION['cliente'] = $dadosLogin['cliente_nome'];
+            $_SESSION['cliente_id'] = $dadosLogin['cliente_id']; 
             $_SESSION['logado_admin'] = true;
 
             //Grava no banco de dados
@@ -77,4 +78,36 @@ function verificaLogado($sessao){
         header("Location: ../index.php");
     endif;
     
+}
+function logOut(){
+    
+}
+
+function pegaIdCliente($nome = null){
+$pdo = conectar();
+try{
+
+$pegaId = $pdo->prepare("SELECT * FROM clientes WHERE cliente_nome = :cliente");
+$pegaId->bindValue(":cliente", $nome);
+$pegaId->execute();
+$dados = $pegaId->fetch(PDO::FETCH_ASSOC);
+return $dados['cliente_id'];
+}catch(PDOException $e){
+    echo "Erro ao pegar ID do Cliente".$e->getMessage();
+}  
+} 
+
+function ultimoLogin($id){
+    
+    $pdo = conectar();
+try{
+
+$ultimaVisita = $pdo->prepare("SELECT * FROM dados_login WHERE dados_login_cliente = :dados_login ORDER BY dados_login_data DESC Limit 1,1 ");
+$ultimaVisita->bindValue(":dados_login", $id);
+$ultimaVisita->execute();
+$dados = $ultimaVisita->fetch(PDO::FETCH_ASSOC);
+return $dados['dados_login_data'];
+}catch(PDOException $e){
+    echo "Erro ao pegar ID do Cliente".$e->getMessage();
+}  
 }
