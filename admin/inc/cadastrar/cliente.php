@@ -1,52 +1,111 @@
+<?php
+    if (isset($_POST['cadastrarCliente'])):
+      
+       
+        
+     
+    $nome = obrigatorio("nome", addslashes($_POST['nome']));
+    $cidade = obrigatorio("cidade", addslashes($_POST['cidade']));
+    $estado = obrigatorio("estado", addslashes($_POST['estado']));
+    $bairro = obrigatorio("bairro", addslashes($_POST['bairro']));
+    
+    $cep = obrigatorio("cep", addslashes($_POST['cep']));
+            validarCep($cep);
+    $telefone = obrigatorio("telefone", addslashes($_POST['telefone']));
+            validarTelefone($telefone);
+    $celular = obrigatorio("celular", addslashes($_POST['celular']));
+            validarCelular($celular);
+    
+    $endereco = obrigatorio("endereco ", addslashes($_POST['endereco']));
+    $login = obrigatorio("login", addslashes($_POST['login']));
+    $senha = obrigatorio("senha", addslashes($_POST['senha']));
+   
+    
+    global $obrigatorio;
+    global $validou;
+   
+     if (empty($obrigatorio)):
+         if(empty($validou)):
+             /*
+          if (verificaCadastro("administrador", "administrador_nome", $nome)):
+          if (verificaCadastro("administrador", "administrador_login", $login)):
+          if (cadastrarAdministrador(array("nome" => $nome, "login" => $login, "senha" => md5($senha)))):
+          $mensagem = "Administrador cadastrado com sucesso!!";
+          else:
+          $erro = "Erro ao cadastar administrador!";
+          endif;
+
+          else:
+          $erro = "Esse login já existe! ";
+          endif;
+          else:
+          $erro = "Esse administrador já existe! ";
+          endif;
+         */
+        else:
+            $erro = $validou;
+        endif;
+    else:
+        $erro = $obrigatorio;
+    endif;
+    
+ endif;
+     
+
+
+?>
+
 <div class="formularioCadastroMedio">
 
-<h2>:.CADASTRAR CLIENTE.:</h2>
+    <h2>:.CADASTRAR CLIENTE.:</h2>
 
-<div class="formCadastroMedio">
-	<form action="" method="POST">
-		
+    <div class="formCadastroMedio">
+        <form action="" method="POST">
+
             <label  for="nome">Nome:</label>
-            <input class="teste" type="text"  name="nome" value="Nome Completo" onfocus="this.value=''">Informe o Nome Completo                       
+            <input class="formCad" type="text"  name="nome" value="" placeholder="Nome Completo">Informe o Nome Completo                       
             <br>
             <label  for="cidade">Cidade: </label>
-            <input class="teste" type="text" name="cidade" value="Cidade"onfocus="this.value=''">Informe a cidade
+            <input class="formCad" type="text" name="cidade" value="" placeholder="Cidade">Informe a cidade
             <br>
             <label for="estado">Estado: </label>
-            <input class="teste" type="text" name="estado" value="Estado"onfocus="this.value=''">Informe o estado
+            <input class="formCad" type="text" name="estado" value="" placeholder="Estado">Informe o estado
             <br>
             <label  for="bairro">Bairro: </label>
-            <input class="teste" type="text"  name="bairro" value="Bairro"onfocus="this.value=''">Informe o bairro
+            <input class="formCad" type="text"  name="bairro" value="" placeholder="Bairro">Informe o bairro
             <br>
             <label for="cep">Cep: </label>
-            <input class="teste" type="text"  name="cep" value="Cep"onfocus="this.value=''">Informe o CEP
+            <input class="formCad" type="text"  name="cep" value="" placeholder="CEP">Informe o CEP
             <br>
             <label for="telefone">Telefone: </label>
-            <input class="teste" type="text"  name="telefone" value="Telefone"onfocus="this.value=''">Telefone (XX) XXXX-XXXX
+            <input class="formCad" type="text"  name="telefone" value=""  placeholder="(XX) XXXX-XXXX">Telefone (XX) XXXX-XXXX
             <br>
             <label  for="celular">Celular: </label>
-            <input class="teste" type="text"  name="celular" value="Celular"onfocus="this.value=''">Celular (XX) XXXXX-XXXX
+            <input class="formCad" type="text"  name="celular" value="" placeholder="(XX) XXXX-XXXX">Celular (XX) XXXXX-XXXX
             <br>
             <label  for="endereco">Endereço: </label>
-            <input class="teste" type="text"  name="endereco" value="Endereço"onfocus="this.value=''">Informe o endereço
+            <input class="formCad" type="text"  name="endereco" value="" placeholder="Endereço">Informe o endereço
             <br>
             <label  for="login">Login: </label>
-            <input class="teste" type="text"  name="login" value="Login"onfocus="this.value=''">Login 
+            <input class="formCad" type="text"  name="login" value="" placeholder="Login">Login 
             <br>
             <label for="senha" >Senha: </label>
-            <input class="teste" type="password"  name="senha" value="Senha" onfocus="this.value=''">Senha minímo 6 dígitos
+            <input class="formCad" type="password"  name="senha" value=""placeholder="Senha" >Senha minímo 6 dígitos
             <br>
-              
-                
-		<label for="submit"></label>
-                
-                <input type="submit" name="cadastrarCliente" value="cadastrar" class="bt_submit"></input>
-                <input type="submit" name="limpaCampos" value="Limpar Formulario" class="bt_submit"></input>
-	</form>
-    
-</div>
 
 
-<?php echo isset($messagem) ? '<div class="mensagem">' .$messagem.'</div>' : ""; ?>
-<?php echo isset($erro) ? '<div class="erro">' .$erro.'</div>' : ""; ?>
+
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" name="cadastrarCliente">Cadastrar</button>
+                <button class="contact100-form-btn">Limpar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <?php echo isset($messagem) ? '<div class="mensagem">' . $messagem . '</div>' : ""; ?>
+    <?php echo isset($erro) ? '<div class="erro">' . $erro . '</div>' : ""; ?>
 
 </div>

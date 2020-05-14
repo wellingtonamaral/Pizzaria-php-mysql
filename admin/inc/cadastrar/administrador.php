@@ -52,18 +52,7 @@ endif;
     </div>
 
     <?php echo isset($mensagem) ? '<div class="mensagem">' . $mensagem . '</div>' : ""; ?>
-    <?php
-    if (isset($erro)):
-        if (is_array($erro)):
-            foreach ($erro as $err):
-                if (!empty($err)):
-                    echo '<div class="erro">' . $err . '</div>';
-                endif;
-            endforeach;
-            
-        endif;
-    endif;
-    ?>
+   <?php echo isset($erro) ? '<div class="erro">' . $erro . '</div>' : ""; ?>
 
 
 

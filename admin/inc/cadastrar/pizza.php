@@ -1,9 +1,5 @@
-<form>
-    <label class="lb" for="fname">Nome:</label>
-            <input class="teste" type="text" id="fname" name="fname" value="Nome">                            
-            <br>
-            <label for="fendereco">Endereço: </label>
-            <input class="teste" type="text" id="fendereco" name="fendereco" value="Endereço">
 
-
-</form>
+    <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn">Cadastrar</button>
+        <button class="contact100-form-btn">Limpar</button>
+    </div>
