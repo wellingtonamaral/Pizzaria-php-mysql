@@ -14,7 +14,7 @@ try{
 if ($_SERVER['REQUEST_METHOD'] == 'POST'):
     if(isset($_POST['logar'])):
             $login = addslashes($_POST['login']);
-            $senha = addslashes($_POST['senha']);
+            $senha = addslashes(md5($_POST['senha']));
            
            if(logar($login,$senha)):
            header("Location: inc/painel.php");

@@ -11,7 +11,11 @@ function carregarIncludes($includes = null, $modo = null) {
     else:
         throw new Exception("O parametro modo não pode ser NULO");
     endif;
-    set_include_path(PATH_INCLUDE . "connects/" . PATH_SEPARATOR . PATH_INCLUDE . "login/". PATH_SEPARATOR . PATH_INCLUDE ."url/");
+    set_include_path(PATH_INCLUDE . "connects/" 
+            . PATH_SEPARATOR . PATH_INCLUDE . "login/"
+            . PATH_SEPARATOR . PATH_INCLUDE ."url/"
+            . PATH_SEPARATOR . PATH_INCLUDE ."cadastrar/"
+            . PATH_SEPARATOR . PATH_INCLUDE ."helps/");
 
 
     if (!is_null($includes)):

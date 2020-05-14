@@ -2,7 +2,7 @@
 session_start();
 include_once '../functions/config/config.php';
 try{
-    carregarIncludes(array("conexao","url","login"),"admin");
+    carregarIncludes(array("conexao","url","login","categoria","utils","administrador"),"admin");
 } catch (Exception $e) {
     echo $e->getMessage();
 
@@ -46,9 +46,9 @@ verificaLogado('logado_admin');
                 <div id="menu_lateral">
                     <ul>
                         <li><a href="?p=cadastrar_pizza" > Cadastrar Pizza</a></li>
-                        <li><a href=""> Cadastrar Categoria</a></li>
-                        <li><a href="">  Cadastrar Cliente</a></li>
-                        <li><a href="">  Cadastrar Administradors</a></li>
+                        <li><a href="?p=cadastrar_categoria"> Cadastrar Categoria</a></li>
+                        <li><a href="?p=cadastrar_cliente">  Cadastrar Cliente</a></li>
+                        <li><a href="?p=cadastrar_administrador">  Cadastrar Administradors</a></li>
                         <li><a href="">  Cadastrar Marcadores</a></li>
 
                         <br />

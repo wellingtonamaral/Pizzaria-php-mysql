@@ -4,12 +4,12 @@
 
 <p>
     <?php 
-     $id = pegaIdCliente($_SESSION['cliente']);
+     $id = pegaIdAdministrador($_SESSION['administrador']);
     
      
     ?>
     
-    Bem Vindo <?php echo $_SESSION['cliente'];?>,seu último acesso foi :
+    Bem Vindo <?php echo $_SESSION['administrador'];?>,seu último acesso foi :
    <span id="ultimoLogin">
  <?php 
     $dataLogin = ultimoLogin($id);
