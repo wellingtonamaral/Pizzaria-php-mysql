@@ -1,4 +1,5 @@
 <?php
+unset($_SESSION);
 if (isset($_POST['cadastrarCliente'])):
 
 
@@ -20,7 +21,17 @@ if (isset($_POST['cadastrarCliente'])):
     $login = obrigatorio("login", addslashes($_POST['login']));
     $senha = obrigatorio("senha", addslashes($_POST['senha']));
 
+    criaSessao("nome", $nome);
+    criaSessao("cidade", $cidade);
+    criaSessao("estado", $estado);
+    criaSessao("bairro", $bairro);
+    criaSessao("cep", $cep);
+    criaSessao("celular", $celular);
+    criaSessao("telefone", $telefone);
+    criaSessao("endereco", $endereco);
+    criaSessao("login", $login);
 
+    
     global $obrigatorio;
     global $validou;
 
@@ -52,6 +63,10 @@ if (isset($_POST['cadastrarCliente'])):
     endif;
 
 endif;
+
+if(isset($_POST['limparCampos'])):
+    unset($_SESSION);
+endif;
 ?>
 
 <div class="formularioCadastroMedio">
@@ -62,28 +77,28 @@ endif;
         <form action="" method="POST">
 
             <label  for="nome">Nome:</label>
-            <input class="formCad" type="text"  name="nome" value="" placeholder="Nome Completo">Informe o Nome Completo                       
+            <input class="formCad" type="text"  name="nome" value="<?php echo isset($_SESSION['nome']) ? $_SESSION['nome']: ""; ?>" placeholder="Nome Completo">Informe o Nome Completo                       
             <br>
             <label  for="cidade">Cidade: </label>
-            <input class="formCad" type="text" name="cidade" value="" placeholder="Cidade">Informe a cidade
+            <input class="formCad" type="text" name="cidade" value="<?php echo isset($_SESSION['cidade']) ? $_SESSION['cidade']: ""; ?>" placeholder="Cidade">Informe a cidade
             <br>
             <label for="estado">Estado: </label>
-            <input class="formCad" type="text" name="estado" value="" placeholder="Estado" maxlength="2">Informe o estado
+            <input class="formCad" type="text" name="estado" value="<?php echo isset($_SESSION['estado']) ? $_SESSION['estado']: ""; ?>" placeholder="Estado" maxlength="2">Informe o estado
             <br>
             <label  for="bairro">Bairro: </label>
-            <input class="formCad" type="text"  name="bairro" value="" placeholder="Bairro">Informe o bairro
+            <input class="formCad" type="text"  name="bairro" value="<?php echo isset($_SESSION['bairro']) ? $_SESSION['bairro']: ""; ?>" placeholder="Bairro">Informe o bairro
             <br>
             <label for="cep">Cep: </label>
-            <input class="formCad" type="text"  name="cep" value="" placeholder="CEP" maxlength="9">Informe o CEP
+            <input class="formCad" type="text"  name="cep" value="<?php echo isset($_SESSION['cep']) ? $_SESSION['cep']: ""; ?>" placeholder="CEP" maxlength="9">Informe o CEP
             <br>
             <label for="telefone">Telefone: </label>
-            <input class="formCad" type="text"  name="telefone" value=""  placeholder="(XX) XXXX-XXXX">Telefone (XX) XXXX-XXXX
+            <input class="formCad" type="text"  name="telefone" value="<?php echo isset($_SESSION['telefone']) ? $_SESSION['telefone']: ""; ?>"  placeholder="(XX) XXXX-XXXX">Telefone (XX) XXXX-XXXX
             <br>
             <label  for="celular">Celular: </label>
-            <input class="formCad" type="text"  name="celular" value="" placeholder="(XX) XXXX-XXXX">Celular (XX) XXXXX-XXXX
+            <input class="formCad" type="text"  name="celular" value="<?php echo isset($_SESSION['celular']) ? $_SESSION['celular']: ""; ?>" placeholder="(XX) XXXX-XXXX">Celular (XX) XXXXX-XXXX
             <br>
             <label  for="endereco">Endereço: </label>
-            <input class="formCad" type="text"  name="endereco" value="" placeholder="Endereço">Informe o endereço
+            <input class="formCad" type="text"  name="endereco" value="<?php echo isset($_SESSION['endereco']) ? $_SESSION['endereco']: ""; ?>" placeholder="Endereço">Informe o endereço
             <br>
             <label  for="login">Login: </label>
             <input class="formCad" type="text"  name="login" value="" placeholder="Login">Login 
@@ -98,7 +113,7 @@ endif;
 
             <div class="container-contact100-form-btn">
                 <button class="contact100-form-btn" name="cadastrarCliente">Cadastrar</button>
-                <button class="contact100-form-btn">Limpar</button>
+                <button name="limparCampos" class="contact100-form-btn" >Limpar</button>
               
             </div>
               

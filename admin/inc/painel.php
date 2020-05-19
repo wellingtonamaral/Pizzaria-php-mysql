@@ -2,7 +2,7 @@
 session_start();
 include_once '../functions/config/config.php';
 try{
-    carregarIncludes(array("conexao","url","login","categoria","utils","administrador","cliente"),"admin");
+    carregarIncludes(array("conexao","url","login","categoria","utils","administrador","cliente","pizza"),"admin");
 } catch (Exception $e) {
     echo $e->getMessage();
 

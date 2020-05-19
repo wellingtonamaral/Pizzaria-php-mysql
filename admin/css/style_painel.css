@@ -67,7 +67,7 @@ span#ultimoLogin{color: #333;font-weight: bold;}
 .formCadastro .txt_field_menor2{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 190px;}
 .formCadastro .bt_submit{background-color: #900;color: #ffffff;padding: 2px;}
 .formCadastro select{width: 300px;border: solid 1px #900;height: 20px;}
-.formCadastro .caixa_grande{width: 520px;}
+.formCadastro .caixa_grande{width: 220px;}
 .formCadastro label{display: block;}
 /*FIM FORM CADASTRO PEQUENO*/
 
@@ -81,15 +81,16 @@ span#ultimoLogin{color: #333;font-weight: bold;}
 .formCadastroMedio .txt_field_menor2{padding: 4px;font-weight: bold;height: 20px;border: solid 1px #900;width: 190px;}
 .formCadastroMedio .bt_submit{background-color: #900;color: #ffffff;padding: 2px;}
 .formCadastroMedio select{width: 300px;border: solid 1px #900;height: 20px;}
-.formCadastroMedio .caixa_grande{width: 520px;}
+.formCadastroMedio .caixa_grande{width: 220px;}
 .formCadastroMedio 
 .formCadastroMedio label{display: block;}
 /*FIM FORM CADASTRO Médio*/
 
+/* Formulario de Cadastro sem Label*/
 .formCad{
   width: 250px;
   padding: 5px 10px;
-  margin: 8px 50px 5px;
+  margin: 8px 20px 5px;
   box-sizing: border-box;
   border: 1px solid #555;
    
@@ -98,12 +99,37 @@ span#ultimoLogin{color: #333;font-weight: bold;}
 .formCad:focus {
   background-color: lightblue;
 }
+
+/* Formulario de Cadastro sem Label*/
+.formPizza{
+  width: 320px;
+  padding: 5px 10px;
+  margin: 8px 10px 5px;
+  box-sizing: border-box;
+  border: 1px solid #555;
+   
+}
+
+.formPizza:focus {
+  background-color: lightblue;
+}
 label{color: blue;
       display: none;
      
       
 }
-
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    width: 320px;
+}
+textarea {
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
 
 
 
@@ -160,8 +186,3 @@ label{color: blue;
 [ Responsive ]*/
 
     
-
-
-
-
-
