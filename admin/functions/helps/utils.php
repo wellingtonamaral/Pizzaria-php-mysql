@@ -20,8 +20,43 @@ function verificaCadastro($tabela, $nomeCampo, $cadastro) {
     }
 }
 
-function pegaId() {
-    
+function verificaCadastroAlterar($tabela, $nomeCampo, $cadastro, $campoId, $id) {
+
+
+    $pdo = conectar();
+    try {
+
+        $verificaCadastro = $pdo->prepare("SELECT * FROM $tabela WHERE $nomeCampo = :cadastro AND " . $campoId . " != :id");
+        $verificaCadastro->bindValue(":cadastro", $cadastro);
+        $verificaCadastro->bindValue(":id", $id);
+        $verificaCadastro->execute();
+
+        if ($verificaCadastro->rowCount() == 1):
+            return false;
+        else:
+            return true;
+        endif;
+    } catch (PDOException $e) {
+        echo "Erro ao verificar registro cadastrado !" . $e->getMessage();
+    }
+}
+
+function pegaId($tabela, $campoTabela, $id) {
+    $pdo = conectar();
+    try {
+        $listarDados = $pdo->prepare("SELECT * FROM " . $tabela . " WHERE " . $campoTabela . " = " . $id);
+        $listarDados->execute();
+
+        if ($listarDados->rowCount() > 0):
+            $dados = $listarDados->fetch(PDO::FETCH_ASSOC);
+            return $dados;
+        else :
+            return false;
+
+        endif;
+    } catch (PDOException $e) {
+        echo "Erro:  " . $e->getMessage();
+    }
 }
 
 function verificaCampoDigitado() {
@@ -73,33 +108,27 @@ function validarCelular($celular) {
 }
 
 function criaSessao($sessao, $valorSessao) {
-    if(empty($valorSessao)):
+    if (empty($valorSessao)):
         return $_SESSION[$sessao] = "";
-        else:
+    else:
         return $_SESSION[$sessao] = $valorSessao;
     endif;
-          
-   
 }
 
-function listar($tabela){
+function listar($tabela) {
     $pdo = conectar();
-    try{
-         $listar = $pdo->prepare("SELECT * FROM ".$tabela);
-         $listar->execute();
-         
-         if($listar->rowCount() >0):
-             $dados = $listar->fetchAll(PDO::FETCH_ASSOC);
-             return  $dados;
-             else :
-                 return false;
-             
-         endif;
-        
-        
-    } catch (PDOException $e) {
-        echo "Erro:  ".$e->getMessage();
+    try {
+        $listar = $pdo->prepare("SELECT * FROM " . $tabela);
+        $listar->execute();
 
+        if ($listar->rowCount() > 0):
+            $dados = $listar->fetchAll(PDO::FETCH_ASSOC);
+            return $dados;
+        else :
+            return false;
+
+        endif;
+    } catch (PDOException $e) {
+        echo "Erro:  " . $e->getMessage();
     }
-    
 }

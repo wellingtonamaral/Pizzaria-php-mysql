@@ -125,7 +125,7 @@ textarea {
 }
 textarea {
     padding: 10px;
-    line-height: 1.5;
+       line-height: 1.5;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
@@ -186,3 +186,53 @@ textarea {
 [ Responsive ]*/
 
     
+/**/
+.formularioAlterar{width: 90%; margin-left: 20px;}   
+.formularioAlterar tr{text-align: center;font-size:  16px;color: red;}
+.formularioAlterar tr td{border: solid 1px #ccc;}
+.formularioAlterar .input_text{width:  150px; border: solid 1px #333;}
+.formularioAlterar .input_button{background-color:  #900;color: #fff;width: 100px;}
+
+
+
+
+.table-round-corner {
+    margin-top: 15px;
+    width: 80%;
+    text-align: center;
+    overflow:hidden;
+    border-collapse:separate;
+    border: solid #111 1px;
+    -webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
+}
+
+
+.table-td {
+    color: #111;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #111;
+}
+
+.table-th{
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+}
+.table-in{
+    border: inactiveborder;
+    
+}
+.table-button{
+    background-color:  red;
+    color: #fff;
+    border-radius: 10px;
+    width: 80px;
+    font-weight: bold;
+}

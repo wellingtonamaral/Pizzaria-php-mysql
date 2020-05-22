@@ -8,9 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_POST['cadastrarPizza'])):
     $fotoPizza = obrigatorio("foto", $_FILES['foto_pizza']['name']);
     $descricaoPizza = obrigatorio("descricao", $_POST['descricao']);
 
-    criaSessao("nome", $nomePizza);
-    criaSessao("preco", $precoPizza);
-    criaSessao("descricao", $descricaoPizza);
+    criaSessao("nomePizza", $nomePizza);
+    criaSessao("precoPizza", $precoPizza);
+    criaSessao("descricaoPizza", $descricaoPizza);
 
     global $obrigatorio;
     if (empty($obrigatorio)):
@@ -95,16 +95,16 @@ endif;
             </select>
 
 
-            <input class="formPizza" type="nome"  name="nome" value="" placeholder="Categoria da Pizza" max="44" />Informe a Categoria                       
+            <input class="formPizza" type="nome"  name="nome" value="<?php echo isset($_SESSION['nomePizza']) ? $_SESSION['nomePizza']: ""; ?>" placeholder="Categoria da Pizza" max="44" />Informe a Categoria                       
             <br>
 
-            <input class="formPizza" type="text" name="preco" value="" placeholder="Preço da Pizza">Preço da Pizza
+            <input class="formPizza" type="text" name="preco" value="<?php echo isset($_SESSION['precoPizza']) ? $_SESSION['precoPizza']: ""; ?>" placeholder="Preço da Pizza">Preço da Pizza
             <br>
 
             <input class="formPizza" type="file" style="color: blue;" name="foto_pizza" value="" accept="image/png, image/jpeg">Imagem da Pizza
             <br>
 
-            <textarea class="formPizza" name="descricao" value="" placeholder="Descrição da pizza, como peso, ingredientes..." cols="5" rows="6" maxlength="220"></textarea>
+            <textarea class="formPizza" name="descricao" value="<?php echo isset($_SESSION['descricaoPizza']) ? $_SESSION['descricaoPizza']: ""; ?>" placeholder="Descrição da pizza, como peso, ingredientes..." cols="5" rows="6" maxlength="220"></textarea>
             <br />
 
 
