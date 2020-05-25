@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['alterarAdmin'])):
+if (isset($_POST['alterarCliente'])):
 
     $nomeAdministrador = obrigatorio("nome", $_POST['adminNome']);
     $loginAdministrador = obrigatorio("login", $_POST['adminLogin']);
@@ -9,6 +9,8 @@ if (isset($_POST['alterarAdmin'])):
     global $obrigatorio;
     if (empty($obrigatorio)):
 
+      
+        /**
         if (verificaCadastroAlterar("administrador", "administrador_nome", $nomeAdministrador, "administrador_id", $_POST['id'])):
 
             if (verificaCadastroAlterar("administrador", "administrador_login", $loginAdministrador, "administrador_id", $_POST['id'])):
@@ -43,22 +45,38 @@ if (isset($_POST['alterarAdmin'])):
         endif;
 
     else:
-        $erro = $obrigatorio;
+        $erro = $obrigatorio;  
+          **/
     endif;
+ 
+    
 endif;
 ?>
 
 
     <?php
-    $dadosAdministrador = listar("administrador");
+    $dadosAdministrador = listar("clientes");
     ?>
 
    <table class="table-round-corner" cellspacing="0">
     <tr>
         <th class="table-th">Nome</th>
-        <th class="table-th">Login / Usuário</th>
-        <th class="table-th">Senha / Password</th>
+        <th class="table-th">Estado</th>
+        <th class="table-th">Cidade</th>
+        <th class="table-th">Bairro</th>
+        <th class="table-th">CEP</th>
+        <th class="table-th">Telefone</th>
+         <th class="table-th">Celular</th>
+        <th class="table-th">Endereço</th>
+        <th class="table-th">Login</th>
+        <th class="table-th">Senha</th>
+       
+        
+        
+        
+        
         <th class="table-th">Função</th>
+        
     </tr>
 
         <?php
@@ -66,7 +84,7 @@ endif;
             'mode' => 'Jumping',
             'perPage' => 15,
             'delta' => 5,
-            'itemData' => $dadosAdministrador);
+            'itemData' => $dadosAdministradoAr);
 
         $pager = & Pager::factory($params);
         $data = $pager->getPageData();
@@ -76,23 +94,64 @@ endif;
             ?>
             <form action="" method="POST">
                 <tr>
-                <input type="hidden" name="id" value="<?php echo $d['administrador_id']; ?>" />
+                <input type="hidden" name="id" value="<?php echo $d['cliente_id']; ?>" />
+                
+                
+                
+                
+                
                 
                 <td class="table-td">
-                    <input class="table-in" value="<?php echo $d['administrador_nome']; ?>" name="adminNome"></input>
+                    <input class="table-in" value="<?php echo $d['cliente_nome']; ?>" name="clienteNome"></input>
                     
                 </td>
                 <td class="table-td">
-                    <input class="table-in" value="<?php echo $d['administrador_login']; ?>" name="adminLogin"></input>
+                    <input class="table-in" value="<?php echo $d['cliente_estado']; ?>" name="clienteEstado"></input>
                     
                 </td>
                 <td class="table-td">
-                    <input class="table-in" value="<?php echo $d['administrador_senha']; ?>" name="adminSenha"></input>
+                    <input class="table-in" value="<?php echo $d['cliente_cidade']; ?>" name="clienteCidade"></input>
                     
                 </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_bairro']; ?>" name="clienteBairro"></input>
+                    
+                </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_cep']; ?>" name="clienteCep"></input>
+                    
+                </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_telefone']; ?>" name="clienteTelefone"></input>
+                    
+                </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_celular']; ?>" name="clienteCelular"></input>
+                    
+                </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_endereco']; ?>" name="clienteEndereco"></input>
+                    
+                </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_login']; ?>" name="clienteLogin"></input>
+                    
+                </td>
+                <td class="table-td">
+                    <input class="table-in" value="<?php echo $d['cliente_senha']; ?>" name="clienteenha"></input>
+                    
+                </td>
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <td class="table-td">                             
-                               
-                <input type="submit" name="alterarAdmin" value="alterar" class="table-button" />
+                 <input type="submit" name="alterarCliente" value="alterar" class="table-button" />
                 </td>
 
                 </tr>
@@ -120,4 +179,4 @@ endif;
             </td>
         </tr>
 
-    </table>
+    </table>z

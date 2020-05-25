@@ -216,6 +216,10 @@ textarea {
     border: 1px solid #111;
 }
 
+.table-td:focus {
+  background-color: lightblue;
+}
+
 .table-th{
     color: white;
     font-weight: bold;
